@@ -56,6 +56,10 @@ All notable changes to Tech Trends Harvester are documented in this file.
 - Added type annotation for signals dict in aggregate.py
 - All type checking now passes with mypy strict mode
 
+**Tool Configuration Updates**
+- Updated ruff configuration to use new lint section format in pyproject.toml
+- Moved select and ignore settings under [tool.ruff.lint] to eliminate deprecation warnings
+
 ### Dependencies
 
 **New Dependencies**

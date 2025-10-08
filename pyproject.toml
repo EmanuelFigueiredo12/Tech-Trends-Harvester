@@ -65,6 +65,8 @@ index-url = "https://pypi.org/simple"
 [tool.ruff]
 line-length = 120
 target-version = "py39"
+
+[tool.ruff.lint]
 select = ["E", "F", "W", "I"]
 ignore = ["E501"]  # Line too long
 
