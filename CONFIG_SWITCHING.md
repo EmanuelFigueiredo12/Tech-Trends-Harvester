@@ -280,5 +280,5 @@ google_trends:
 ./switch-config.sh status       # Check current
 ```
 
-That's it! Now you can safely test without worrying about getting blocked. 🎯
+That's it! Now you can safely test without worrying about getting blocked.
 
