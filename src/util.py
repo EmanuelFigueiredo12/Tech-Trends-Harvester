@@ -2,7 +2,6 @@
 """
 Tech Trends Harvester - Utility Functions
 Author: Rich Lewis
-test comment
 """
 
 import re, statistics, datetime as dt

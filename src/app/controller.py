@@ -2,6 +2,7 @@
 """
 Tech Trends Harvester - Application Controller
 Author: Rich Lewis
+test ci
 """
 
 import time, traceback, os, json, datetime as dt
