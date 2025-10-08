@@ -42,7 +42,7 @@ def aggregate(rows, weights: dict, min_score_threshold=0.5):
     
     top_signals = (df.sort_values(['term','contrib'], ascending=[True,False])
                      .groupby('term').head(4)[['term','source','metric_name','metric_value','url']])
-    signals = {}
+    signals: dict[str, list] = {}
     for r in top_signals.to_dict(orient='records'):
         signals.setdefault(r['term'], []).append({
             'source': r['source'],

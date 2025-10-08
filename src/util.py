@@ -221,7 +221,7 @@ def extract_question_intent(text: str) -> str:
     
     return "unknown"
 
-def score_blog_worthiness(text: str, metrics: dict = None) -> float:
+def score_blog_worthiness(text: str, metrics: dict | None = None) -> float:
     """
     Score how blog-worthy a topic is based on multiple signals.
     

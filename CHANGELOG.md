@@ -51,6 +51,11 @@ All notable changes to Tech Trends Harvester are documented in this file.
 - All tests run automatically in CI
 - Fixed test assertions to match actual implementation behavior
 
+**Type Safety Improvements**
+- Fixed mypy type hints in util.py (metrics parameter now properly typed as optional)
+- Added type annotation for signals dict in aggregate.py
+- All type checking now passes with mypy strict mode
+
 ### Dependencies
 
 **New Dependencies**
