@@ -107,8 +107,11 @@ class AppController(QtCore.QObject):
 
     def _on_thread_finished(self, key: str, thread: QtCore.QThread, worker: QtCore.QObject):
         """Clean up after a thread finishes."""
+        # Don't call wait() here - it causes "thread tried to wait on itself" error
+        # The thread will clean itself up when quit() is called
         thread.quit()
-        thread.wait()
+        
+        # Schedule cleanup using deleteLater
         worker.deleteLater()
         thread.deleteLater()
         
@@ -119,7 +122,7 @@ class AppController(QtCore.QObject):
         
         # Check if all expected threads are done
         if self._expected_threads and len(self._active_threads) == 0:
-            self.progressUpdate.emit("✓ All sources complete!")
+            self.progressUpdate.emit("All sources complete!")
             self._expected_threads.clear()
             self.allRefreshDone.emit()
     
