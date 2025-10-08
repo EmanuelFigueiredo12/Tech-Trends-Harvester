@@ -19,8 +19,8 @@ All notable changes to Tech Trends Harvester are documented in this file.
 
 **GitHub Actions & Templates**
 - Added comprehensive CI/CD workflow (.github/workflows/ci.yml)
-- CI tests on Ubuntu, macOS, Windows with Python 3.9-3.12
-- Added ci-success summary job for branch protection (single status check for all 12 matrix combinations)
+- CI tests on Ubuntu, macOS, Windows with Python 3.9 and 3.12 (minimum and latest supported versions)
+- Added ci-success summary job for branch protection (single status check for all 6 matrix combinations)
 - Fixed dependency installation in CI (uses `uv pip install -e .`)
 - Created issue templates (Bug Report, Feature Request, New Data Source)
 - Created Pull Request template with checklist
