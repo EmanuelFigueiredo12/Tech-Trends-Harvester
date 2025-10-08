@@ -1,4 +1,9 @@
 
+"""
+Tech Trends Harvester - Utility Functions
+Author: Rich Lewis
+"""
+
 import re, statistics, datetime as dt
 import functools
 import traceback

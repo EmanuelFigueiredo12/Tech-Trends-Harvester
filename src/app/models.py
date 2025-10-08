@@ -1,4 +1,9 @@
 
+"""
+Tech Trends Harvester - Data Models
+Author: Rich Lewis
+"""
+
 from PySide6 import QtCore, QtGui
 
 class RowsTableModel(QtCore.QAbstractTableModel):

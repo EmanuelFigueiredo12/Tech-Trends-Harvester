@@ -1,4 +1,9 @@
 
+"""
+Entry point for Tech Trends Harvester GUI application
+Author: Rich Lewis
+"""
+
 from PySide6 import QtWidgets
 import sys
 from src.app.mainwindow import MainWindow

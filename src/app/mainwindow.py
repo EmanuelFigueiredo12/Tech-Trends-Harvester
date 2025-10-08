@@ -1,6 +1,15 @@
 
+"""
+Tech Trends Harvester - Main Window
+Author: Rich Lewis
+"""
+
 from PySide6 import QtWidgets, QtCore, QtGui
 import yaml, os
+try:
+    import tomllib  # Python 3.11+
+except ImportError:
+    import tomli as tomllib  # Python 3.9-3.10
 from .controller import AppController
 from .models import RowsTableModel
 from .registry import REGISTRY
@@ -8,10 +17,26 @@ from .registry import REGISTRY
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Tech Trends Harvester - GUI")
-        self.resize(1280, 820)
-
+        
+        # Read version from pyproject.toml
         base_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+        pyproject_path = os.path.join(base_dir, "pyproject.toml")
+        try:
+            with open(pyproject_path, "rb") as f:
+                pyproject = tomllib.load(f)
+                version = pyproject.get("project", {}).get("version", "")
+            title = f"Tech Trends Harvester v{version}" if version else "Tech Trends Harvester"
+        except:
+            title = "Tech Trends Harvester"
+        
+        self.setWindowTitle(title)
+        self.resize(1280, 820)
+        
+        # Set application icon
+        icon_path = os.path.join(base_dir, "assets", "icon.svg")
+        if os.path.exists(icon_path):
+            self.setWindowIcon(QtGui.QIcon(icon_path))
+
         cfg_path = os.path.join(base_dir, "config", "sources.yaml")
         with open(cfg_path, "r", encoding="utf-8") as f:
             cfg = yaml.safe_load(f)

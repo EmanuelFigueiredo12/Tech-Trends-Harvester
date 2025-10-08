@@ -1,4 +1,9 @@
 
+"""
+Tech Trends Harvester - Data Aggregation and Scoring
+Author: Rich Lewis
+"""
+
 import json, os, datetime as dt
 import pandas as pd
 from .util import zscore, is_interesting_term, is_question, extract_question_intent, score_blog_worthiness

@@ -1,4 +1,9 @@
 
+"""
+Tech Trends Harvester - Application Controller
+Author: Rich Lewis
+"""
+
 import time, traceback, os, json, datetime as dt
 from dataclasses import dataclass, field
 from typing import Dict, List, Set
