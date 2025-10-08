@@ -2,7 +2,6 @@
 """
 Tech Trends Harvester - Main Window
 Author: Rich Lewis
-test of ci after ruff adjustments
 """
 
 from PySide6 import QtWidgets, QtCore, QtGui
