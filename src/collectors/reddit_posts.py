@@ -7,7 +7,10 @@ This is MUCH better than individual words because:
 - They show what people are actually interested in
 """
 
+import os
+
 import praw
+
 from ..util import now_iso, USER_AGENT
 
 def fetch(subreddits=None, time_filter="week", limit=50, min_score=50):
@@ -40,12 +43,24 @@ def fetch(subreddits=None, time_filter="week", limit=50, min_score=50):
     
     out = []
     
+    # Check for Reddit credentials (required as of 2025)
+    client_id = os.getenv("REDDIT_CLIENT_ID")
+    client_secret = os.getenv("REDDIT_CLIENT_SECRET")
+    user_agent = os.getenv("REDDIT_USER_AGENT", USER_AGENT)
+    
+    if not client_id or not client_secret:
+        raise Exception(
+            "Missing Reddit API credentials! "
+            "Set REDDIT_CLIENT_ID and REDDIT_CLIENT_SECRET in .env file. "
+            "See API_SETUP.md for setup instructions, or disable reddit_posts in config/sources.yaml"
+        )
+    
     try:
-        # Use read-only Reddit instance (no auth needed!)
+        # Reddit now requires authentication even for read-only access
         reddit = praw.Reddit(
-            client_id="tech-trends-harvester",  # Dummy ID for read-only
-            client_secret=None,
-            user_agent=USER_AGENT  # Standard browser user-agent
+            client_id=client_id,
+            client_secret=client_secret,
+            user_agent=user_agent
         )
         
         for subreddit_name in subreddits:
@@ -80,12 +95,20 @@ def fetch(subreddits=None, time_filter="week", limit=50, min_score=50):
                     })
                     
             except Exception as e:
+                error_msg = str(e)
+                # If it's an auth error, raise it so user sees it
+                if "401" in error_msg or "403" in error_msg or "Unauthorized" in error_msg or "credentials" in error_msg.lower():
+                    raise Exception(f"Reddit authentication failed: {e}. Check your REDDIT_CLIENT_ID and REDDIT_CLIENT_SECRET in .env file.")
                 print(f"Reddit: Failed to fetch r/{subreddit_name}: {e}")
                 continue
                 
     except Exception as e:
-        print(f"Reddit: Failed to initialize: {e}")
-        return []
+        error_msg = str(e)
+        # Check for common auth errors
+        if "401" in error_msg or "403" in error_msg or "Unauthorized" in error_msg or "credentials" in error_msg.lower():
+            raise Exception(f"Reddit authentication failed: {e}. Verify your credentials in .env file are correct.")
+        # Other errors - raise them too so user can see
+        raise Exception(f"Reddit error: {e}")
     
     return out
 
