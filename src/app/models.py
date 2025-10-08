@@ -11,6 +11,8 @@ class RowsTableModel(QtCore.QAbstractTableModel):
         super().__init__(parent)
         self.columns = columns
         self.rows = rows or []
+        self._sort_column = -1
+        self._sort_order = QtCore.Qt.AscendingOrder
 
     def rowCount(self, parent=QtCore.QModelIndex()):
         return len(self.rows)
@@ -63,3 +65,39 @@ class RowsTableModel(QtCore.QAbstractTableModel):
         self.beginResetModel()
         self.rows = rows or []
         self.endResetModel()
+    
+    def sort(self, column, order):
+        """Sort table by given column number and order."""
+        if column < 0 or column >= len(self.columns):
+            return
+        
+        self._sort_column = column
+        self._sort_order = order
+        
+        key = self.columns[column][1]
+        reverse = (order == QtCore.Qt.DescendingOrder)
+        
+        self.layoutAboutToBeChanged.emit()
+        
+        # Sort with proper handling of different data types
+        def sort_key(row):
+            val = row.get(key, "")
+            # Handle None values
+            if val is None or val == "":
+                return (1, "")  # Sort empty/None to end
+            # Handle numeric values
+            if isinstance(val, (int, float)):
+                return (0, val)
+            # Handle lists (like top_signals)
+            if isinstance(val, list):
+                return (0, len(val))
+            # Handle strings
+            return (0, str(val).lower())
+        
+        try:
+            self.rows.sort(key=sort_key, reverse=reverse)
+        except Exception:
+            # Fallback to simple string sorting if anything fails
+            self.rows.sort(key=lambda r: str(r.get(key, "")).lower(), reverse=reverse)
+        
+        self.layoutChanged.emit()
