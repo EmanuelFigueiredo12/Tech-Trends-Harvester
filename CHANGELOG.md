@@ -18,10 +18,20 @@ All notable changes to Tech Trends Harvester are documented in this file.
 - Enhanced project metadata in pyproject.toml (license, keywords, classifiers, URLs)
 
 **GitHub Actions & Templates**
-- Added CI/CD workflow (.github/workflows/ci.yml) for automated testing across platforms
+- Added comprehensive CI/CD workflow (.github/workflows/ci.yml)
+- CI tests on Ubuntu, macOS, Windows with Python 3.9-3.12
+- Fixed dependency installation in CI (uses `uv pip install -e .`)
 - Created issue templates (Bug Report, Feature Request, New Data Source)
 - Created Pull Request template with checklist
-- CI tests on Ubuntu, macOS, Windows with Python 3.9-3.12
+
+**CI/CD Pipeline Features**
+- Automated testing with pytest and coverage reporting
+- Code linting with ruff (PEP 8 compliance)
+- Code formatting checks with ruff
+- Type checking with mypy
+- Security scanning with bandit
+- Dependency vulnerability checks with safety
+- All quality checks run on every push and PR
 
 **Application Icon**
 - Added SVG application icon (assets/icon.svg)
@@ -33,10 +43,25 @@ All notable changes to Tech Trends Harvester are documented in this file.
 - Supports Python 3.9+ (uses tomli for older versions, tomllib for 3.11+)
 - Graceful fallback if version cannot be read
 
+**Unit Tests**
+- Created test suite in `tests/` directory
+- Tests for utility functions (tokenization, question detection, term filtering)
+- Tests for aggregation functions (categorization)
+- All tests run automatically in CI
+
 ### Dependencies
 
 **New Dependencies**
 - tomli 2.0+ (for Python < 3.11, conditional)
+
+**New Dev Dependencies**
+- pytest 7.4+ (unit testing framework)
+- pytest-cov 4.1+ (code coverage)
+- ruff 0.1+ (linting and formatting)
+- mypy 1.7+ (type checking)
+- bandit 1.7+ (security scanning)
+- safety 2.3+ (dependency vulnerability checking)
+- types-PyYAML, types-requests (type stubs)
 
 ---
 

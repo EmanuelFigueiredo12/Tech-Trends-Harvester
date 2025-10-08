@@ -18,6 +18,7 @@ Perfect for **tech bloggers**, **content creators**, and **developers** who want
 - [Usage](#usage)
 - [Configuration](#configuration)
 - [Data Sources](#data-sources)
+- [Development](#development)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -194,6 +195,48 @@ This tool aggregates data from:
 - **Lobsters** (JSON feeds)
 
 See `RATE_LIMITS.md` for usage guidelines and ethical considerations.
+
+## Development
+
+### Running Tests
+
+```bash
+# Install dev dependencies
+uv pip install -e ".[dev]"
+
+# Run all tests
+pytest tests/ -v
+
+# Run with coverage
+pytest tests/ --cov=src --cov-report=term-missing
+```
+
+### Code Quality
+
+```bash
+# Linting
+ruff check src/
+
+# Formatting
+ruff format src/
+
+# Type checking
+mypy src/ --ignore-missing-imports
+
+# Security scanning
+bandit -r src/
+
+# Dependency vulnerabilities
+safety check
+```
+
+### CI/CD
+
+The project uses GitHub Actions for continuous integration:
+- Runs on Ubuntu, macOS, and Windows
+- Tests Python 3.9, 3.10, 3.11, and 3.12
+- Includes linting, formatting, type checking, and security scans
+- All checks must pass before merging PRs
 
 ## Contributing
 
