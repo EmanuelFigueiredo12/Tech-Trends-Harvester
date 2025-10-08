@@ -58,7 +58,7 @@ jobs:
     - name: Run linting (ruff)
       run: |
         uv pip install ruff
-        uv run ruff check src/ --select E,F,W --ignore E501
+        uv run ruff check src/
       continue-on-error: true
     
     - name: Check code formatting (ruff)

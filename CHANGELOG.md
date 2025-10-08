@@ -60,6 +60,12 @@ All notable changes to Tech Trends Harvester are documented in this file.
 - Updated ruff configuration to use new lint section format in pyproject.toml
 - Moved select and ignore settings under [tool.ruff.lint] to eliminate deprecation warnings
 - Added E701 to ruff ignore list to allow guard clauses (if not x: return pattern)
+- Fixed CI to use pyproject.toml config instead of command-line overrides
+
+**Code Quality Fixes**
+- Fixed import formatting in aggregate.py (split multiple imports, removed unused imports)
+- Removed trailing whitespace from docstrings
+- All files now pass ruff linting with zero errors
 
 ### Dependencies
 

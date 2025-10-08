@@ -4,19 +4,21 @@ Tech Trends Harvester - Data Aggregation and Scoring
 Author: Rich Lewis
 """
 
-import json, os, datetime as dt
+import datetime as dt
+
 import pandas as pd
+
 from .util import zscore, is_interesting_term, is_question, extract_question_intent, score_blog_worthiness
 
 def aggregate(rows, weights: dict, min_score_threshold=0.5):
     """
     Aggregate rows with weighted z-scores and filter out low-signal terms.
-    
+
     Args:
         rows: List of row dicts from collectors
         weights: Dict of source -> weight multiplier
         min_score_threshold: Minimum score to include in results
-    
+
     Returns:
         Tuple of (aggregated_rows, dataframe)
     """
