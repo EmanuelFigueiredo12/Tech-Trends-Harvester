@@ -11,11 +11,13 @@ docs/
 
 # Test files
 test_threading.py
+test_reddit.py
 
 # Application data and history
 data/
 data/history/
 data/*.json
+data/*.csv
 
 # Config backups created by switch-config.sh
 config/*.backup
@@ -110,8 +112,10 @@ ipython_config.py
 # SageMath parsed files
 *.sage.py
 
-# Environments
+# Environments (API credentials and secrets)
 .env
+.env.local
+.env.*.local
 .venv
 env/
 venv/
@@ -220,6 +224,11 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 
+# Vim/Emacs
+*.swp
+*.swo
+*~
+
 # =============================================================================
 # SPECIALIZED PYTHON TOOLS
 # =============================================================================
@@ -252,3 +261,8 @@ Desktop.ini
 
 # Linux
 *~
+
+# Temporary files
+*.tmp
+temp/
+tmp/
