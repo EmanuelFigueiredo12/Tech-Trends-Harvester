@@ -1,11 +1,25 @@
 
-# Tech Trends Harvester (v0.5.0)
+# Tech Trends Harvester
 
-A Python GUI program to run on the desktop.
+[![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PySide6](https://img.shields.io/badge/GUI-PySide6-green.svg)](https://www.qt.io/qt-for-python)
+
+Desktop app that aggregates tech trends from 11+ sources to help you discover blog-worthy topics.
 
 **Find blog-worthy tech topics** from 11+ sources! Get smart, filtered insights into what developers are actually talking about, using, and searching for.
 
 Perfect for **tech bloggers**, **content creators**, and **developers** who want to write about trending topics that attract readers.
+
+## Table of Contents
+
+- [Key Features](#key-features)
+- [Quick Start](#quick-start-with-uv-recommended)
+- [Usage](#usage)
+- [Configuration](#configuration)
+- [Data Sources](#data-sources)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Key Features
 
@@ -163,14 +177,39 @@ collectors:
     # your params
 ```
 
-## License
+## Data Sources
 
-MIT
+This tool aggregates data from:
+- **Hacker News** (Firebase API)
+- **Reddit** (PRAW API)
+- **GitHub Trending** (HTML parsing)
+- **Google Trends** (pytrends)
+- **Stack Overflow** (Stack Exchange API)
+- **DEV.to** (Forem API)
+- **Medium** (RSS feeds)
+- **PyPI** (pypistats)
+- **npm** (npm registry API)
+- **crates.io** (crates.io API)
+- **Homebrew** (analytics JSON)
+- **Lobsters** (JSON feeds)
+
+See `RATE_LIMITS.md` for usage guidelines and ethical considerations.
 
 ## Contributing
 
-Pull requests welcome! Please ensure:
-- Collectors return consistent data structure
-- Error handling for network failures
-- Type hints where appropriate
-- Update this README if adding features
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on:
+- Reporting bugs
+- Suggesting enhancements
+- Adding new data sources
+- Code style and standards
+- Pull request process
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+Built with Python, PySide6, and data from multiple open-source and public APIs.
+
+Special thanks to the communities maintaining the data sources listed above.

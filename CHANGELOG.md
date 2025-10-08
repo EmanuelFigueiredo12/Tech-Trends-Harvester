@@ -4,6 +4,42 @@ All notable changes to Tech Trends Harvester are documented in this file.
 
 ---
 
+## [0.6.1] - 2025-10-08
+
+### GitHub Repository Enhancements
+
+**Professional Repository Setup**
+- Added MIT LICENSE file
+- Created CONTRIBUTING.md with contribution guidelines
+- Created SECURITY.md with security policy and vulnerability reporting
+- Created CODE_OF_CONDUCT.md (Contributor Covenant 2.0)
+- Added comprehensive README badges (Python version, License, GUI framework)
+- Added Table of Contents to README
+- Enhanced project metadata in pyproject.toml (license, keywords, classifiers, URLs)
+
+**GitHub Actions & Templates**
+- Added CI/CD workflow (.github/workflows/ci.yml) for automated testing across platforms
+- Created issue templates (Bug Report, Feature Request, New Data Source)
+- Created Pull Request template with checklist
+- CI tests on Ubuntu, macOS, Windows with Python 3.9-3.12
+
+**Application Icon**
+- Added SVG application icon (assets/icon.svg)
+- Icon displays trending chart with "TTH" branding
+- Integrated icon into main window
+
+**Version Display**
+- Window title now shows version number automatically from pyproject.toml
+- Supports Python 3.9+ (uses tomli for older versions, tomllib for 3.11+)
+- Graceful fallback if version cannot be read
+
+### Dependencies
+
+**New Dependencies**
+- tomli 2.0+ (for Python < 3.11, conditional)
+
+---
+
 ## [0.6.0] - 2025-10-08
 
 ### Major Features - Blog Topics Intelligence
