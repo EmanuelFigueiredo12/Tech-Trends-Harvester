@@ -33,11 +33,11 @@ This tool aggregates data from:
 - [Quick Start](#quick-start-with-uv-recommended)
 - [Usage](#usage)
 - [Configuration](#configuration)
-- [Data Sources](#data-sources)
 - [Development](#development)
 - [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgments](#Acknowledgments)
+- [Data Sources](#data-sources)
 
 ## Key Features
 
