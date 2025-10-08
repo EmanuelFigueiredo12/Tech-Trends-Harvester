@@ -2,6 +2,7 @@
 """
 Tech Trends Harvester - Main Window
 Author: Rich Lewis
+test ci
 """
 
 from PySide6 import QtWidgets, QtCore, QtGui
