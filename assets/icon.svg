@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="128" cy="128" r="118" fill="#34495e" stroke="#3498db" stroke-width="4"/>
+  
+  <!-- Trending line chart -->
+  <polyline points="60,180 90,150 120,130 150,100 180,80 210,60" 
+            fill="none" stroke="#2ecc71" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Data points -->
+  <circle cx="60" cy="180" r="6" fill="#27ae60" stroke="#2ecc71" stroke-width="2"/>
+  <circle cx="90" cy="150" r="6" fill="#27ae60" stroke="#2ecc71" stroke-width="2"/>
+  <circle cx="120" cy="130" r="6" fill="#27ae60" stroke="#2ecc71" stroke-width="2"/>
+  <circle cx="150" cy="100" r="6" fill="#27ae60" stroke="#2ecc71" stroke-width="2"/>
+  <circle cx="180" cy="80" r="6" fill="#27ae60" stroke="#2ecc71" stroke-width="2"/>
+  <circle cx="210" cy="60" r="6" fill="#27ae60" stroke="#2ecc71" stroke-width="2"/>
+  
+  <!-- TTH text -->
+  <text x="128" y="158" font-family="Arial, sans-serif" font-size="60" font-weight="bold" 
+        fill="#ecf0f1" text-anchor="middle">TTH</text>
+</svg>
