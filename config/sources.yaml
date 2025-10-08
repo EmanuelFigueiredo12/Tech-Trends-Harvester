@@ -1,0 +1,102 @@
+
+run:
+  timezone: "America/New_York"
+  output_dir: "data"
+  dash_json: "docs/data/latest.json"
+
+weights:
+  # NEW high-value sources (phrases + search data)
+  reddit_posts: 1.5        # Full post titles = actual blog topics!
+  google_trends: 2.0       # ACTUAL search volume = most important signal
+  
+  # Original sources
+  hackernews: 1.0
+  hn_algolia: 1.1
+  lobsters: 0.8
+  devto: 0.7
+  medium: 0.6
+  stackoverflow_tags: 1.0
+  homebrew: 0.9
+  npm: 0.9
+  github_trending: 1.2
+  pypi: 0.9
+  crates: 0.9
+
+collectors:
+  # NEW: Reddit posts (ENABLE THIS!)
+  reddit_posts:
+    enabled: true
+    subreddits: 
+      - programming
+      - webdev
+      - learnprogramming
+      - devops
+      - javascript
+      - python
+      - rust
+      - golang
+      - MachineLearning
+      - artificial
+      - kubernetes
+    time_filter: "week"  # day, week, month, year, all
+    limit: 30            # posts per subreddit
+    min_score: 50        # minimum upvotes
+  
+  # NEW: Google Trends (ENABLE THIS!)
+  google_trends:
+    enabled: true
+    keywords:
+      - "cursor ai"
+      - "anthropic claude"
+      - "supabase"
+      - "bun javascript"
+      - "astro framework"
+      - "langchain"
+      - "llama ai"
+      - "tailwind css"
+      - "nextjs 15"
+      - "rust programming"
+    timeframe: "today 3-m"  # today 1-m, today 3-m, today 12-m
+    geo: ""  # empty = worldwide, or "US", "GB", etc.
+  
+  # Original collectors
+
+  hackernews:
+    enabled: true
+    top_n: 150
+  hn_algolia:
+    enabled: true
+    hours_back: 48
+    min_points: 10
+    hits_per_page: 200
+  github_trending:
+    enabled: true
+    since: weekly
+    languages: []
+  lobsters:
+    enabled: true
+    endpoint: "https://lobste.rs/hottest.json"
+    top_n: 150
+  devto:
+    enabled: true
+    per_page: 80
+    pages: 1
+  medium:
+    enabled: true
+    topics: ["technology","programming","artificial-intelligence","data-science"]
+  stackoverflow_tags:
+    enabled: true
+    site: "stackoverflow"
+    top_n: 200
+  homebrew:
+    enabled: true
+    window: "30d"
+  npm:
+    enabled: true
+    packages: ["react","vue","svelte","next","vite","typescript","eslint","express","tailwindcss","axios"]
+  pypi:
+    enabled: true
+    packages: ["requests","numpy","pandas","fastapi","django","flask","pytest","uvicorn","pydantic","scipy"]
+  crates:
+    enabled: true
+    per_page: 100
