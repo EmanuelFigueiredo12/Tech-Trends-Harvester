@@ -59,6 +59,7 @@ All notable changes to Tech Trends Harvester are documented in this file.
 **Tool Configuration Updates**
 - Updated ruff configuration to use new lint section format in pyproject.toml
 - Moved select and ignore settings under [tool.ruff.lint] to eliminate deprecation warnings
+- Added E701 to ruff ignore list to allow guard clauses (if not x: return pattern)
 
 ### Dependencies
 

@@ -68,7 +68,10 @@ target-version = "py39"
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I"]
-ignore = ["E501"]  # Line too long
+ignore = [
+    "E501",  # Line too long
+    "E701",  # Multiple statements on one line (colon) - allow guard clauses
+]
 
 [tool.ruff.format]
 quote-style = "double"
