@@ -37,6 +37,7 @@ This tool aggregates data from:
 - [Development](#development)
 - [Contributing](#contributing)
 - [License](#license)
+- [Acknowledgments](#Acknowledgments)
 
 ## Key Features
 
