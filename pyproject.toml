@@ -1,11 +1,34 @@
 
 [project]
 name = "tech-trends-harvester"
-version = "0.6.0"
-description = "Find blog-worthy tech topics with Reddit posts, Google Trends, phrase extraction, and question detection."
+version = "0.6.1"
+description = "Desktop app that aggregates tech trends from 11+ sources to help you discover blog-worthy topics."
 readme = "README.md"
 requires-python = ">=3.9"
+license = {text = "MIT"}
 authors = [{name = "Rich Lewis", email = "1149213+RichLewis007@users.noreply.github.com"}]
+keywords = ["trends", "blogging", "tech", "aggregator", "content", "research"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet",
+    "Topic :: Software Development",
+    "Topic :: Text Processing",
+]
+
+[project.urls]
+Homepage = "https://github.com/RichLewis007/tech-trends-harvester"
+Repository = "https://github.com/RichLewis007/tech-trends-harvester"
+Issues = "https://github.com/RichLewis007/tech-trends-harvester/issues"
+Changelog = "https://github.com/RichLewis007/tech-trends-harvester/blob/main/CHANGELOG.md"
 dependencies = [
     "PySide6>=6.9,<7",
     "requests>=2.32,<3",
@@ -17,6 +40,7 @@ dependencies = [
     "praw>=7.8,<8",
     "pytrends>=4.9,<5",
     "lxml>=6.0,<7",
+    "tomli>=2.0,<3; python_version < '3.11'",
 ]
 
 [tool.uv]
