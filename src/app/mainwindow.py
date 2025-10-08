@@ -9,7 +9,7 @@ import yaml, os
 try:
     import tomllib  # Python 3.11+
 except ImportError:
-    import tomli as tomllib  # Python 3.9-3.10
+    import tomli as tomllib  # type: ignore  # Python 3.9-3.10
 from .controller import AppController
 from .models import RowsTableModel
 from .registry import REGISTRY
