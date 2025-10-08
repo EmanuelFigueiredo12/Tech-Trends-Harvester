@@ -49,7 +49,7 @@ All tests run automatically on:
 - Every push to main
 - Every pull request
 - Multiple platforms (Ubuntu, macOS, Windows)
-- Multiple Python versions (3.9, 3.10, 3.11, 3.12)
+- Multiple Python versions (3.9 and 3.12 are tested in CI; 3.10 and 3.11 should also work)
 
 ## Coverage
 

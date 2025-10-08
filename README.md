@@ -2,8 +2,9 @@
 # Tech Trends Harvester
 
 [![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PySide6](https://img.shields.io/badge/GUI-PySide6-green.svg)](https://www.qt.io/qt-for-python)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CI](https://github.com/RichLewis007/tech-trends-harvester/actions/workflows/ci.yml/badge.svg)](https://github.com/RichLewis007/tech-trends-harvester/actions/workflows/ci.yml)
 
 Desktop app that aggregates tech trends from 11+ sources to help you discover blog-worthy topics.
 
@@ -75,7 +76,7 @@ uv run python diagnose.py
 ```bash
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt  # You'll need to generate this from pyproject.toml
+pip install -e .  # Installs from pyproject.toml
 python run_app.py
 ```
 
