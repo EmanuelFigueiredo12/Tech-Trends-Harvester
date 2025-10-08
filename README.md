@@ -1,3 +1,4 @@
+![Tech Trends Harvester Banner](assets/readme-banner.png)
 
 # Tech Trends Harvester
 
