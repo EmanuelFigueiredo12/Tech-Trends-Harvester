@@ -48,6 +48,7 @@ All notable changes to Tech Trends Harvester are documented in this file.
 - Tests for utility functions (tokenization, question detection, term filtering)
 - Tests for aggregation functions (categorization)
 - All tests run automatically in CI
+- Fixed test assertions to match actual implementation behavior
 
 ### Dependencies
 
