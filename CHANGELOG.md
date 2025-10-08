@@ -30,7 +30,7 @@ All notable changes to Tech Trends Harvester are documented in this file.
 - Code linting with ruff (PEP 8 compliance)
 - Code formatting checks with ruff
 - Type checking with mypy
-- Security scanning with bandit
+- Security scanning with bandit (skips B112 try-except-continue for data collectors)
 - Dependency vulnerability checks with safety
 - All quality checks run on every push and PR
 

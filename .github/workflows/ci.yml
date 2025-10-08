@@ -75,7 +75,7 @@ jobs:
     - name: Security scanning (bandit)
       run: |
         uv pip install bandit
-        uv run bandit -r src/ -f txt
+        uv run bandit -r src/ -f txt --skip B112
       continue-on-error: true
     
     - name: Dependency vulnerability check (safety)
