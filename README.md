@@ -11,6 +11,22 @@ Desktop app that aggregates tech trends from 11+ sources to help you discover bl
 
 Perfect for **tech bloggers**, **content creators**, and **developers** who want to write about trending topics that attract readers.
 
+## Data Sources
+
+This tool aggregates data from:
+- **Hacker News** (Firebase API)
+- **Reddit** (PRAW API)
+- **GitHub Trending** (HTML parsing)
+- **Google Trends** (pytrends)
+- **Stack Overflow** (Stack Exchange API)
+- **DEV.to** (Forem API)
+- **Medium** (RSS feeds)
+- **PyPI** (pypistats)
+- **npm** (npm registry API)
+- **crates.io** (crates.io API)
+- **Homebrew** (analytics JSON)
+- **Lobsters** (JSON feeds)
+
 ## Table of Contents
 
 - [Key Features](#key-features)
@@ -24,7 +40,7 @@ Perfect for **tech bloggers**, **content creators**, and **developers** who want
 
 ## Key Features
 
-- **Blog Topics View**: Smart filtering shows only blog-worthy trends (no more "libc" and "quote"!)
+- **Blog Topics View**: Smart filtering shows only blog-worthy trends
 - **11 Data Sources**: Hacker News, GitHub Trending, Stack Overflow, PyPI, npm, DEV.to, Medium, and more
 - **Auto-Categorization**: AI/ML, Cloud, Frontend, Backend, etc. - find your niche
 - **Multi-Source Validation**: Topics mentioned in multiple sources = more trustworthy
@@ -100,8 +116,8 @@ Edit `config/sources.yaml` to:
 ## Troubleshooting
 
 ### macOS Issues
-- If the app is slow on first launch, wait a moment for Qt to warm up
-- Network/SSL issues: Run `/Applications/Python*/Install\ Certificates.command`
+- If the app is slow on first launch, wait a moment for Qt to 'warm up'.
+- Network/SSL issues: Run `/Applications/Python*/Install\ Certificates.command` (Google it..)
 
 ### Linux Issues
 - Missing Qt platform plugin? Install: `sudo apt-get install libxcb-xinerama0 libxcb-cursor0 libxkbcommon-x11-0`
@@ -178,22 +194,6 @@ collectors:
     # your params
 ```
 
-## Data Sources
-
-This tool aggregates data from:
-- **Hacker News** (Firebase API)
-- **Reddit** (PRAW API)
-- **GitHub Trending** (HTML parsing)
-- **Google Trends** (pytrends)
-- **Stack Overflow** (Stack Exchange API)
-- **DEV.to** (Forem API)
-- **Medium** (RSS feeds)
-- **PyPI** (pypistats)
-- **npm** (npm registry API)
-- **crates.io** (crates.io API)
-- **Homebrew** (analytics JSON)
-- **Lobsters** (JSON feeds)
-
 See `RATE_LIMITS.md` for usage guidelines and ethical considerations.
 
 ## Development
@@ -234,7 +234,7 @@ safety check
 
 The project uses GitHub Actions for continuous integration:
 - Runs on Ubuntu, macOS, and Windows
-- Tests Python 3.9, 3.10, 3.11, and 3.12
+- Tests Python 3.9 and 3.12
 - Includes linting, formatting, type checking, and security scans
 - All checks must pass before merging PRs
 
