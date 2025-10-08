@@ -106,10 +106,27 @@ def fetch(keywords=None, timeframe="today 3-m", geo=""):
                 time.sleep(2)
                 
             except Exception as e:
+                error_msg = str(e)
+                # Check for rate limiting (429 error)
+                if "429" in error_msg or "Too Many Requests" in error_msg:
+                    raise Exception(
+                        "Google Trends rate limit exceeded (429). "
+                        "You've been temporarily blocked for making too many requests. "
+                        "Wait 1-24 hours before trying again, or disable Google Trends in config/sources.yaml. "
+                        "See RATE_LIMITS.md for details."
+                    )
                 print(f"Google Trends: Failed batch {batch}: {e}")
                 continue
                 
     except Exception as e:
+        error_msg = str(e)
+        # Check for rate limiting (429 error)
+        if "429" in error_msg or "Too Many Requests" in error_msg or "rate limit" in error_msg.lower():
+            raise Exception(
+                "RATE LIMIT: Google Trends blocked your IP (429). "
+                "Wait 1-24 hours, or disable google_trends in config. "
+                "See RATE_LIMITS.md and API_SETUP.md for help."
+            )
         print(f"Google Trends: Failed to initialize: {e}")
         return []
     
