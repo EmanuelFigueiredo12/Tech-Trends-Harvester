@@ -195,9 +195,26 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def _onStatus(self, key, st):
         if st.last_error:
-            msg = f"[{key}] ERROR: {st.last_error.splitlines()[0]}"; self.txt.append(msg); self.debugOut.appendPlainText(msg)
+            error_msg = st.last_error
+            msg = f"[{key}] ERROR: {error_msg.splitlines()[0]}"
+            self.txt.append(msg)
+            self.debugOut.appendPlainText(msg)
+            
+            # Show popup for rate limit errors (429)
+            if "429" in error_msg or "RATE LIMIT" in error_msg or "rate limit" in error_msg.lower():
+                QtWidgets.QMessageBox.warning(
+                    self,
+                    "Rate Limit Exceeded",
+                    f"{key} has been rate-limited!\n\n{error_msg.splitlines()[0]}\n\n"
+                    f"Recommendations:\n"
+                    f"- Wait 1-24 hours before trying again\n"
+                    f"- Disable {key} in config/sources.yaml during testing\n"
+                    f"- See RATE_LIMITS.md for more information"
+                )
         else:
-            msg = f"[{key}] OK - {len(st.rows)} rows in {st.last_run_ms} ms"; self.txt.append(msg); self.debugOut.appendPlainText(msg)
+            msg = f"[{key}] OK - {len(st.rows)} rows in {st.last_run_ms} ms"
+            self.txt.append(msg)
+            self.debugOut.appendPlainText(msg)
     
     def _onProgress(self, msg):
         """Handle progress updates from controller."""
