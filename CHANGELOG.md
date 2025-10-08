@@ -6,6 +6,34 @@ All notable changes to Tech Trends Harvester are documented in this file.
 
 ## [0.6.1] - 2025-10-08
 
+### User Interface Improvements
+
+**Enhanced Table Sorting**
+- Implemented full sorting support for all table views
+- Click column headers to sort ascending
+- Click again to reverse sort (descending)
+- Smart sorting handles different data types (numbers, strings, lists)
+- Empty/null values automatically sorted to the end
+- Works on all tabs: Blog Topics, Aggregated, By Source, and Movers
+
+**Threading Fixes**
+- Fixed "QThread::wait: Thread tried to wait on itself" error
+- Removed synchronous wait() call from thread cleanup
+- Proper asynchronous thread cleanup using deleteLater()
+- More stable multi-threaded data collection
+
+**Rate Limit Alerts**
+- Added popup warning dialog when API rate limits are exceeded (429 errors)
+- Shows helpful message with recommendations to wait or disable the source
+- Google Trends now provides clear error messages when rate-limited
+- Error messages guide users to RATE_LIMITS.md documentation
+
+**Application Icon Improvements**
+- Icon now set on QApplication for better dock/taskbar visibility
+- Tries PNG format first for better compatibility, falls back to SVG
+- Application name properly set for system integration
+- Icon should now appear in macOS dock and window title bar
+
 ### GitHub Repository Enhancements
 
 **Professional Repository Setup**
@@ -67,10 +95,19 @@ All notable changes to Tech Trends Harvester are documented in this file.
 - Removed trailing whitespace from docstrings
 - All files now pass ruff linting with zero errors
 
+**API Authentication Updates**
+- Reddit API now requires proper authentication (changed from free read-only access)
+- Updated Reddit collector to use environment variables for credentials
+- Added graceful error handling when Reddit credentials are missing
+- Created comprehensive API_SETUP.md guide for configuring API credentials
+- Instructions for Reddit, Google Trends, and Stack Overflow API setup
+- Added .gitignore file to protect sensitive credentials and data files
+
 ### Dependencies
 
 **New Dependencies**
 - tomli 2.0+ (for Python < 3.11, conditional)
+- python-dotenv 1.0+ (for loading .env file with API credentials)
 
 **New Dev Dependencies**
 - pytest 7.4+ (unit testing framework)
