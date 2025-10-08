@@ -1,4 +1,8 @@
 
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "tech-trends-harvester"
 version = "0.6.1"
